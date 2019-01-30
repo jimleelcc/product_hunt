@@ -25,8 +25,11 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav ml-auto">
-          <a class="nav-item nav-link" href="#">Login in</a>
-          <a class="nav-item nav-link" href="#">sign up</a>
+          <a class="nav-item nav-link" href="#">登录</a>
+          <!--写链接方法1-->
+          <!--<a class="nav-item nav-link" href="account/signup">注册</a>-->
+          <!--写链接方法2 url的名字写在url.py里面-->
+          <a class="nav-item nav-link" href="{% url '注册页面' %}">注册</a>
         </div>
       </div>
     </nav>
