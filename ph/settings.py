@@ -37,6 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'products',
+    'account',
 ]
 
 MIDDLEWARE = [
@@ -54,7 +56,7 @@ ROOT_URLCONF = 'ph.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -118,3 +120,11 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 设置静态文件根目录（收集静态文件的目录，也就是根目录）
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+# 收集静态文件（被收集的目录）
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'products/static'),
+]
