@@ -27,6 +27,7 @@
         <div class="navbar-nav ml-auto">
 
           {% if user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url '发布页面' %}">发布</a>
            <!--登出是get，因为不能get，所以只能做个post的form（其实不是特别理解，还需查阅部分资料，这句注释可能是错误的）-->
           <a class="nav-item nav-link" href="JavaScript:{document.getElementById('退出').submit()}">退出</a> 
           <form id= '退出' method="POST" action="{% url '退出页面' %}"><br>
