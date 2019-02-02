@@ -1,5 +1,21 @@
 {% extends "theme.html" %}
 
 {% block content %}
-产品列表主要内容
+
+<div class="container">
+
+{% for products in products.all %}
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ products.icon.url }}" class="card-img-top" alt="...">
+        </div>
+        <div class="col-md-8" style="padding-left:30px">
+            <h3><a href="products/{{ products.id }}">{{ products.title }}</h3></a><br>
+            {{ products.intro }}  
+        </div> 
+    </div>   
+
+{% endfor %}
+</div>
+
 {% endblock content %}
